@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-toggle {
+  background-color: #fff;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+    var(--tw-shadow);
+}
+@media all and (max-width: 754px) {
+  .mobile-bg {
+    background-color: #fff;
+  }
+}
+
+.hero-section {
+  background: linear-gradient(90deg, #020024, #e0f5f1 0, #fff4f4);
+}
