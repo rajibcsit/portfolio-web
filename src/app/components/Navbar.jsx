@@ -26,8 +26,8 @@ const Navbar = () => {
   return (
     <>
       <nav className="flex lg:py-4 flex-wrap items-center justify-between mx-auto px-4 z-20 fixed top-0 left-0 right-0 py-2 mobile-bg">
-        <Link href={"/"} className="text-2xl md:text-5xl font-semibold">
-          LOGO
+        <Link href="/" className="text-xl md:text-2xl font-semibold">
+          Al-Hasan Sarkar
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
