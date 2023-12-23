@@ -5,6 +5,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
+import Testimonials from "./components/Testimonials";
 
 let title = "Al-hasan Sarkar - Professional SEO Expert | Boosting Online Visibility and Rankings";
 let keywords =
@@ -36,6 +37,7 @@ export default function Home() {
       <AchievementsSection />
       <AboutSection />
       <ProjectsSection />
+      <Testimonials />
       <EmailSection />
 
       <Footer />
