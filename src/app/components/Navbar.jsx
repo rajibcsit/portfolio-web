@@ -68,6 +68,7 @@ const Navbar = () => {
         </div>
       </nav>
 
+      {/* Mobile Navigation Menu */}
       {navbarOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-95 overflow-y-auto flex flex-col items-center justify-start pt-24 gap-8 text-white z-30 transition-all duration-300">
           <button
@@ -76,12 +77,13 @@ const Navbar = () => {
           >
             <XMarkIcon className="h-7 w-7" />
           </button>
+          {/* Mobile Nav Links */}
           {navLinks.map((link, index) => (
             <Link
               key={index}
               href={link.path}
               onClick={handleLinkClick} // Close menu on link click
-              className="text-3xl font-semibold tracking-wide hover:underline hover:scale-105 transition-transform"
+              className="text-xs font-semibold  py-3 px-2 hover:underline hover:scale-105 transition-transform"
             >
               {link.title}
             </Link>

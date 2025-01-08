@@ -46,14 +46,14 @@ const StarIcon = () => (
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="bg-[#f5f5fc] h-screen flex items-center">
+    <section id="testimonials" className="bg-[#f5f5fc] min-h-screen flex items-center">
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
           Read trusted reviews from customers
         </h2>
 
         <motion.div
-          className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8"
+          className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -70,6 +70,8 @@ const Testimonials = () => {
                 <Image
                   alt={testimonial.name}
                   src={testimonial.image}
+                  width={100}
+                  height={100}
                   className="h-14 w-14 rounded-full object-cover"
                 />
                 <div>
@@ -81,7 +83,7 @@ const Testimonials = () => {
                   <p className="mt-0.5 text-lg font-medium text-gray-900">{testimonial.name}</p>
                 </div>
               </div>
-              <p className="mt-4 text-gray-700">{testimonial.review}</p>
+              <p className="mt-4 text-gray-700 text-sm sm:text-base">{testimonial.review}</p>
             </motion.blockquote>
           ))}
         </motion.div>

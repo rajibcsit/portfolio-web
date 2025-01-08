@@ -38,8 +38,10 @@ const EmailSection = () => {
         <div className="grid md:grid-cols-2 items-center gap-12">
           {/* Left Section */}
           <div>
-            <h2 className="text-4xl font-bold text-white leading-tight">Let's Connect</h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-md">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
+              Let's Connect
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-md">
               I’m currently open to new opportunities. Whether you have a question, project, or just
               want to say hello, feel free to drop a message. I’ll get back to you as soon as
               possible!

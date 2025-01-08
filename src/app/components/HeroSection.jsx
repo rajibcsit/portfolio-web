@@ -6,16 +6,34 @@ import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   return (
-    <section className="lg:py-16 hero-section h-screen" id="home">
-      <div className="container mt-24 mx-auto px-12 py-4">
-        <div className="grid grid-cols-1 sm:grid-cols-12">
+    <section className="lg:py-16 hero-section h-auto lg:h-screen" id="home">
+      <div className="container mt-24 mx-auto px-6 sm:px-12 py-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Profile Image on mobile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+            className="lg:hidden flex justify-center mb-6"
           >
-            <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold">
+            <div className="rounded-full bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 w-[200px] h-[200px] relative overflow-hidden">
+              <Image
+                src="/images/profile.png"
+                alt="hero image"
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                width={200}
+                height={200}
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-center sm:text-left justify-self-start"
+          >
+            <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800">
               <span>Hello, I&apos;m</span>
               <br />
               <TypeAnimation
@@ -25,8 +43,8 @@ const HeroSection = () => {
                 repeat={Infinity}
               />
             </h1>
-            <p className="text-lg sm:text-xl mb-6 lg:text-2xl leading-relaxed">
-              I&apos;m Al-Hasan Sarkar, Former SEO Analysis at Finch Data Soft. Currently, I&apos;m
+            <p className="text-lg sm:text-xl mb-6 lg:text-2xl text-gray-600 leading-relaxed">
+              I&apos;m Al-Hasan Sarkar, Former SEO Analyst at Finch Data Soft. Currently, I&apos;m
               working at IOVISIONBD as an SEO Analyst. I&apos;m a Professional SEO Expert With
               Digital Marketing experience.
             </p>
@@ -77,19 +95,21 @@ const HeroSection = () => {
               </Link>
             </div>
           </motion.div>
+
+          {/* Profile Image for desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="col-span-4 place-self-center mt-4 lg:mt-0"
+            className="hidden lg:flex justify-center mt-8 lg:mt-0"
           >
-            <div className="rounded-full bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden">
+            <div className="rounded-full bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] relative overflow-hidden mx-auto">
               <Image
                 src="/images/profile.png"
                 alt="hero image"
                 className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                width={250}
-                height={250}
+                width={400}
+                height={400}
               />
             </div>
           </motion.div>

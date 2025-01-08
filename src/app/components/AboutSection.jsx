@@ -8,7 +8,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {[
           "Off-Page SEO",
           "On-Page SEO",
@@ -62,7 +62,7 @@ const TAB_DATA = [
               {index + 1}
             </div>
             <div>
-              <p className="text-lg font-semibold text-gray-800">{edu.institution}</p>
+              <p className="text-base sm:text-lg font-semibold text-gray-800">{edu.institution}</p>
               <p className="text-sm text-gray-600">{edu.degree}</p>
             </div>
           </div>
@@ -83,18 +83,22 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="h-screen bg-gradient-to-r from-purple-100 to-indigo-100 py-16" id="about">
-      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center  max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <Image
-          src="/images/about-image.png"
-          width={500}
-          height={500}
-          alt="about-img"
-          className="rounded-xl shadow-lg"
-        />
+    <section className="h-auto bg-gradient-to-r from-purple-100 to-indigo-100 py-16" id="about">
+      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="flex justify-center md:justify-start">
+          <Image
+            src="/images/about-image.png"
+            width={400}
+            height={400}
+            alt="about-img"
+            className="rounded-xl shadow-lg object-cover"
+          />
+        </div>
         <div className="text-left">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">About Me</h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <h2 className="text-3xl sm:text-4xl text-2xl font-bold text-gray-800 mb-4 sm:mb-6">
+            About Me
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6">
             I'm Al-Hasan Sarkar, a Professional SEO Expert From Bangladesh. I provide both On-Page
             and Off-Page SEO services with a special focus on Guest Posting, Link Building, Content
             & Social Media Marketing. I can be your "SEO Guy" to ensure instant rankings on Google
@@ -102,7 +106,7 @@ const AboutSection = () => {
             You believe in results, i.e. better engagement, more traffic, and higher conversion. I'm
             ready to take the challenge.
           </p>
-          <div className="flex space-x-4 mt-8">
+          <div className="flex space-x-4 mt-6 flex-wrap">
             <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>
               Skills
             </TabButton>

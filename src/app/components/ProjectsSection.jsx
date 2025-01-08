@@ -63,7 +63,13 @@ const ProjectsSection = () => {
                 hoveredProject === project.id ? "scale-105 shadow-xl" : ""
               }`}
             >
-              <Image src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={100}
+                height={100}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-6 bg-white">
                 <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
                 <p className="text-gray-600 mt-2">{project.description}</p>
