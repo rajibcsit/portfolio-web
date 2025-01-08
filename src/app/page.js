@@ -1,10 +1,9 @@
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
-import ProjectsSection from "./components/ProjectsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
-import AchievementsSection from "./components/AchievementsSection";
+import HeroSection from "./components/HeroSection";
+import Navbar from "./components/Navbar";
+import ProjectsSection from "./components/ProjectsSection";
 import Testimonials from "./components/Testimonials";
 
 let title = "Al-hasan Sarkar - Professional SEO Expert | Boosting Online Visibility and Rankings";
@@ -34,7 +33,7 @@ export default function Home() {
       <Navbar />
 
       <HeroSection />
-      <AchievementsSection />
+      {/* <AchievementsSection /> */}
       <AboutSection />
       <ProjectsSection />
       <Testimonials />

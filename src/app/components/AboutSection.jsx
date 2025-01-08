@@ -1,6 +1,6 @@
 "use client";
-import React, { useTransition, useState } from "react";
 import Image from "next/image";
+import { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 
 const TAB_DATA = [
@@ -8,50 +8,68 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li className=" font-semibold"> Off-Page SEO </li>
-        <li className="mt-2 font-semibold"> On-Page SEO </li>
-        <li className="mt-2 font-semibold"> Organic Search </li>
-        <li className="mt-2 font-semibold"> Yoast SEO Plugin </li>
-        <li className="mt-2 font-semibold"> Keyword Research </li>
-        <li className="mt-2 font-semibold"> Keyword Analysis </li>
-      </ul>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        {[
+          "Off-Page SEO",
+          "On-Page SEO",
+          "Organic Search",
+          "Yoast SEO Plugin",
+          "Keyword Research",
+          "Keyword Analysis",
+        ].map((skill, index) => (
+          <div
+            key={index}
+            className="bg-gradient-to-r from-purple-200 to-indigo-200 text-gray-800 font-semibold rounded-full py-2 px-4 text-center shadow hover:shadow-lg transition-all"
+          >
+            {skill}
+          </div>
+        ))}
+      </div>
     ),
   },
   {
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li className="font-semibold">National University Of Bangladesh.</li>
-        <span className="text-[12px] font-medium">Master&apos;s degree, ICT.</span>
-
-        <li className="mt-3 font-semibold">Carmichael College Rangpur</li>
-        <span className="text-[12px] font-medium">Master of Arts - MA, ICT.</span>
-
-        <li className="mt-3 font-semibold">National University Bangladesh</li>
-        <span className="text-[12px] font-medium">
-          Bachelor&apos;s Degree, Islamic History & Culture.
-        </span>
-
-        <li className="mt-3 font-semibold">Shathibari Degree College,Rangpur.</li>
-        <span className="text-[12px] font-medium">Higher Secondary Certificate - HSC.</span>
-
-        <li className="mt-3 font-semibold">Panbazar D.M High High School.</li>
-        <span className="text-[12px] font-medium">Secondary School Certificate - SSC.</span>
-      </ul>
+      <div className="space-y-8">
+        {[
+          {
+            institution: "National University Of Bangladesh",
+            degree: "Master's degree, ICT",
+          },
+          {
+            institution: "Carmichael College Rangpur",
+            degree: "Master of Arts - MA, ICT",
+          },
+          {
+            institution: "National University Bangladesh",
+            degree: "Bachelor's Degree, Islamic History & Culture",
+          },
+          {
+            institution: "Shathibari Degree College, Rangpur",
+            degree: "Higher Secondary Certificate - HSC",
+          },
+          {
+            institution: "Panbazar D.M High School",
+            degree: "Secondary School Certificate - SSC",
+          },
+        ].map((edu, index) => (
+          <div
+            key={index}
+            className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all"
+          >
+            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+              {index + 1}
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-gray-800">{edu.institution}</p>
+              <p className="text-sm text-gray-600">{edu.degree}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     ),
   },
-  // {
-  //   title: "Certifications",
-  //   id: "certifications",
-  //   content: (
-  //     <ul className="list-disc pl-2">
-  //       <li>AWS Cloud Practitioner</li>
-  //       <li>Google Professional Cloud Developer</li>
-  //     </ul>
-  //   ),
-  // },
 ];
 
 const AboutSection = () => {
@@ -65,34 +83,36 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="bg-[#F5F5FC] pt-12" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} alt="about-img" />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold  mb-4">About Me</h2>
-          <p className="text-sm lg:text-base">
-            I'm Al-Hasan Sarkar, a Professional SEO Expert From Bangladesh. I provide you both
-            On-Page and Off-Page SEO services with a special focus on Guest Posting, Link Building,
-            Content & Social Media Marketing. I can be your "SEO Guy" to ensure instant rankings on
-            Google and quick recovery from a penalty like Panda, Penguin, Hummingbird, and other
-            issues. You believe in results, i.e. better engagement, more traffic, and higher
-            conversion. I'm ready to take the challenge.
+    <section className="h-screen bg-gradient-to-r from-purple-100 to-indigo-100 py-16" id="about">
+      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center  max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <Image
+          src="/images/about-image.png"
+          width={500}
+          height={500}
+          alt="about-img"
+          className="rounded-xl shadow-lg"
+        />
+        <div className="text-left">
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">About Me</h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            I'm Al-Hasan Sarkar, a Professional SEO Expert From Bangladesh. I provide both On-Page
+            and Off-Page SEO services with a special focus on Guest Posting, Link Building, Content
+            & Social Media Marketing. I can be your "SEO Guy" to ensure instant rankings on Google
+            and quick recovery from a penalty like Panda, Penguin, Hummingbird, and other issues.
+            You believe in results, i.e. better engagement, more traffic, and higher conversion. I'm
+            ready to take the challenge.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div className="flex space-x-4 mt-8">
             <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>
               Skills
             </TabButton>
             <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}>
               Education
             </TabButton>
-            {/* <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              Certifications
-            </TabButton> */}
           </div>
-          <div className="mt-8">{TAB_DATA.find((t) => t.id === tab).content}</div>
+          <div className="mt-6 p-6 bg-white rounded-lg shadow-md">
+            {TAB_DATA.find((t) => t.id === tab).content}
+          </div>
         </div>
       </div>
     </section>

@@ -17,5 +17,28 @@
 }
 
 .hero-section {
-  background: linear-gradient(90deg, #d3ede7, #f7efef);
+  background: radial-gradient(circle at top right, #f3ecff, #e2e7fe);
+  color: #1e293b; /* Darker text color for better readability */
+}
+
+h1 span {
+  background: linear-gradient(to right, #06beb6, #48b1f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: #475569; /* Subtle gray for body text */
+}
+
+button {
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(to right, #ffd200, #f7971e);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
